@@ -4,18 +4,21 @@ def main():
 
 	pygame.init()
 
+	# variable for the play cont
+	play = 0
 	#Load all images
 	background = pygame.image.load("background.jpg")
-	backgroundSize=pygame.Surface.get_size(background)
-	X = pygame.image.load("X.jpg")
-	O = pygame.image.load("O.jpg")
+	backgroundSize = pygame.Surface.get_size(background)
+	X = pygame.image.load("X.png")
+	XSize = pygame.Surface.get_size(X)
+	O = pygame.image.load("O.png")
+	OSize = pygame.Surface.get_size(O)
 
 	#Make the table coordinates as an array of Rects
 	table =[[0,0,0],[0,0,0],[0,0,0]]
 	for i in range(3):
 		for j in range(3):
-			table[i][j] = pygame.Rect(i*backgroundSize[0]/3,j*backgroundSize[1]/3,backgroundSize[0]/3,backgroundSize[1]/3)
-	print(table)
+			table[i][j] = pygame.Rect((i*backgroundSize[0]/3)+5,(j*backgroundSize[1]/3)+5,(backgroundSize[0]/3)-5,(backgroundSize[1]/3)-5)
 
 	#Make the window same size as the background image
 	screen = pygame.display.set_mode(backgroundSize)
@@ -36,14 +39,17 @@ def main():
                 # change the value to False, to exit the main loop
 				running = False
 			# control the click event
-			if event.type == pygame.MOUSEBUTTONUP:
+			if event.type == pygame.MOUSEBUTTONUP and play < 9:
 				pos = pygame.mouse.get_pos()
 				# depending on where the click was blit the image in the correct position
 				for i in range(3):
 					for j in range(3):
 						if table[i][j].collidepoint(pos):
+							play+=1
 							screen.blit(player, table[i][j])
 							pygame.display.flip()
+							# eliminate the coordinate where the X or O has been blited
+							table[i][j] = pygame.Rect(0,0,0,0)
 							# change the player after each click
 							if player == X:
 								player = O
