@@ -1,0 +1,49 @@
+* {
+ font-family: Garamond;
+}
+
+body{
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+#principal{
+	margin: 0;
+	height: 90%;
+	width: 100%;
+	display: flex;
+}
+
+#mapa{
+	margin: 0;
+	height: 100%;
+	width: 65%;
+}
+
+#graficos{
+	margin: 0;
+	height: 100%;
+	width: 35%;
+}
+
+#personalizacion{
+	padding-left: 40px;
+	height: 10%;
+	width: 100%;
+	align-self: flex-end;
+	font-size: 20;
+}
+
+select{
+	font-size: 17;
+}
+
+div.infoBox{
+	position: absolute;
+	text-align: center;
+	font-size: 13;
+	background: #66FFFF;
+	border: 1px solid black;
+}

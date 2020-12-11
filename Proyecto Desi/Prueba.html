@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01”>
+<html>
+<head>
+	<title>Desigualdad de Género por País</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<link href="estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id='principal'>
+		<div id='mapa'></div>
+		<div id='graficos'></div>
+	</div>
+	<div id='personalizacion'>
+		<h>Variable a representar:</h>
+		<select id="selecVar">
+			<option value="Mort.Maternal">Ratio de mortalidad maternal (por 100.000 nacimientos)</option>
+			<option value="Nac.Adolescentes">Ratio de nacimientos en adolescentes (por 1.000 entre 15-19 años)</option>
+			<option value="AsientosParlamento">Porcentaje de reparto de asientos en el parlamento</option>
+			<option value="Educacion">Porcentaje de población con alguna educación secundaria (mayores de 25)</option>
+			<option value="Pob.Activa">Porcentaje de población activa (mayores de 15)</option>
+			<option selected="" value="GII">GII (Gender Inequality Index)</option>
+		</select>
+		<br>
+		<h>Género:</h>
+		<select id="selecGen">
+			<option value="H.">Hombre</option>
+			<option selected="" value="M.">Mujer</option>
+		</select>
+	</div>
+	<script type='text/javascript' src="grafico.js" async defer></script> 
+</body>
+</html>
