@@ -1,8 +1,8 @@
 const MAPWIDTH = document.getElementById('mapa').offsetWidth;
 const MAPHEIGHT = document.getElementById('mapa').offsetHeight;
 
-var genderIneq = d3.csv('DesigualdadGenero.csv');
-var mapData = d3.json('custom.geo.json');
+var genderIneq = d3.csv('https://raw.githubusercontent.com/danipequelangos/Programming/master/Proyecto%20Desi/DesigualdadGenero.csv');
+var mapData = d3.json('https://raw.githubusercontent.com/danipequelangos/Programming/master/Proyecto%20Desi/custom.geo.json');
 
 var svg = d3.select("#mapa")
 			.append("svg")
